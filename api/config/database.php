@@ -1,15 +1,26 @@
 <?php
-$servername = "localhost";
-$banco = "db_php_ajax_oop_api_master";
-$username = "root";
-$password = "root";
-
-// Create connection
-$conn = new mysqli($servername, $banco, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+class Database{
+  
+    // specify your own database credentials
+    private $host = "localhost";
+    private $db_name = "db_php_ajax_oop_api_master";
+    private $username = "root";
+    private $password = "root";
+    public $conn;
+  
+    // get the database connection
+    public function getConnection(){
+  
+        $this->conn = null;
+  
+        try{
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        }catch(PDOException $exception){
+            echo "Connection error: " . $exception->getMessage();
+        }
+  
+        return $this->conn;
+    }
 }
-echo "Connected successfully";
 ?>
