@@ -47,15 +47,17 @@ class Produto
     function lerUm()
     {
         // selecionar consultar todos
-        $query =
-            "SELECT c.nome as categoria_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
-                FROM 
-                    " . $this->tabela_nome . " p LEFT JOIN
+        $query = "SELECT
+            c.nome as categoria_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
+                FROM
+                    " . $this->tabela_nome . " p
+                    LEFT JOIN
                         categorias c
                             ON p.categoria_id = c.id
-                                WHERE 
-                                    p.id = ?
-                                LIMIT 0,1";
+                            WHERE
+                                p.id = ?
+                                    LIMIT
+                                        0,1";
 
         //preparar declaração de consulta
         $stmt = $this->conn->prepare($query);
@@ -75,8 +77,8 @@ class Produto
         $this->descricao= $row['descricao'];
         $this->categoria_id= $row['categoria_id'];
         $this->categoria_nome = $row['categoria_nome'];
+        
     }
-
     function criar() 
     {
         // consulta para inserir registro
