@@ -1,9 +1,9 @@
 <?php
 
-class Produto
+class Categoria
 {
     private $conn;
-    private  $tabela_nome = "produtos";
+    private  $tabela_nome = "categorias";
 
     // propriedade dos objetos
     public $id;

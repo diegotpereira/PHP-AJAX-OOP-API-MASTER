@@ -50,7 +50,7 @@ if ($num>0) {
     }
 
     // incluir paginação
-    $total_linhas=$produto->contar();
+    $total_linhas=$produto->rowCount();
     $pagina_url="{$home_url}produto/ler_paginacao.php?";
     $paging=$utilidades->obterPaginacao($page, $total_linhas, $registros_por_pagina, $pagina_url);
     $produtos_arr["paging"]=$paging;

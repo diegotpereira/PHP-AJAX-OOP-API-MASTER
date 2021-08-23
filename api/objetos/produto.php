@@ -234,7 +234,7 @@ class Produto
                             
     }
 
-    function contar()
+    function rowCount()
     {
         // consulta para atualizar registro
         $query = "SELECT COUNT(*) as total_linhas FROM " . $this->tabela_nome. ""; 

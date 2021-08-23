@@ -2,32 +2,29 @@
 
 // cabeçalhos obrigatórios
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: access");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 include_once '../config/database.php';
-include_once '../objetos/produto.php';
+include_once '../objetos/categoria.php';
   
 // a conexão do banco de dados estará aqui
 $database = new Database();
 $db = $database->getConnection();
 
-
 // incializar o objeto
-$produto = new Produto($db);
+$categoria = new Categoria($db);
 
-
-// ler os produtos estará aqui  
-
-// consultar produtos
-$stmt = $produto->ler();
+// consultar categorias
+$stmt = $categoria->ler();
 $num = $stmt->rowCount();
-
-
 
 // verifique se mais de 0 registro encontrado
 if ($num>0) {
     # code...
-    // array de produtos
+    // array de categorias
     $categorias_arr = array();
     $categorias_arr["registros"] = array();
 
