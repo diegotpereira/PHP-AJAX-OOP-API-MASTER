@@ -176,7 +176,7 @@ class Produto
     {
         // selecionar consultar todos
         $query = "SELECT
-                c.nome as category_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
+                c.nome as categoria_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
             FROM
                 " . $this->tabela_nome . " p
                 LEFT JOIN
@@ -210,7 +210,7 @@ class Produto
     {
         // selecionar consultar todos
         $query = "SELECT
-                c.nome as category_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
+                c.nome as categoria_nome, p.id, p.nome, p.descricao, p.preco, p.categoria_id, p.criado
             FROM
                 " . $this->tabela_nome . " p
                 LEFT JOIN

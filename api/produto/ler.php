@@ -1,4 +1,4 @@
-'<?php
+<?php
 
 // cabeçalhos obrigatórios
 header("Access-Control-Allow-Origin: *");

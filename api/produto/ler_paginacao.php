@@ -43,7 +43,7 @@ if ($num>0) {
             "descricao" => html_entity_decode($descricao),
             "preco" => $preco,
             "categoria_id" => $categoria_id,
-            // "categoria_nome" => $categoria_nome
+            "categoria_nome" => $categoria_nome
         );
 
         array_push($produtos_arr["registros"], $produto_item);
