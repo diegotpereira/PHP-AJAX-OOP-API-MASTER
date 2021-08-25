@@ -29,7 +29,7 @@ if ($num>0) {
     // array de produtos
     $produtos_arr = array();
     $produtos_arr["registros"] = array();
-    $produtos_arr["paginacao"] = array();
+    $produtos_arr["paging"] = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         # code...

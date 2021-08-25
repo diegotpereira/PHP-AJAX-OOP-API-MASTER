@@ -7,7 +7,7 @@ class Utilidades{
         $paging_arr = array();
 
         // botão para a primeira página
-        $paging_arr["primeira"] = $page > 1 ? "{$pagina_url}page=1" : "";
+        $paging_arr["first"] = $page > 1 ? "{$pagina_url}page=1" : "";
 
         // conte todos os produtos no banco de dados para calcular o total de páginas
         $total_paginas = ceil($total_linhas / $registros_por_pagina);
@@ -28,15 +28,15 @@ class Utilidades{
             if (($x > 0) && ($x <= $total_paginas)) {
                 # code...
                 $paging_arr['pages'][$contar_pagina]["page"] = $x;
-                $paging_arr['pages'][$contar_pagina]["url"] = "{pagina_url}page={$x}";
-                $paging_arr['pages'][$contar_pagina]["page"] = $x==$page ? "sim" : "não";
+                $paging_arr['pages'][$contar_pagina]["url"] = "{$pagina_url}page={$x}";
+                $paging_arr['pages'][$contar_pagina]["pagina_atual"] = $x==$page ? "sim" : "não";
 
                 $contar_pagina++;
             }
         }
 
         // botão para última página
-        $paging_arr["ultima"] = $page < $total_paginas ? "{$pagina_url}page={$total_paginas}" : "";
+        $paging_arr["last"] = $page < $total_paginas ? "{$pagina_url}page={$total_paginas}" : "";
 
         //formato json
         return $paging_arr;
